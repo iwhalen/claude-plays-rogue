@@ -1,3 +1,5 @@
+"""CLI definition."""
+
 from pathlib import Path
 from typing import Annotated
 
@@ -20,10 +22,10 @@ def main(
     player: Annotated[
         PlayerType,
         typer.Option(
-            help="Type of player: 'human' or 'claude'.",
+            help="Type of player..",
             case_sensitive=False,
         ),
-    ] = PlayerType.CLAUDE,
+    ] = PlayerType.AI,
     rogue_path: Annotated[
         Path,
         typer.Option(

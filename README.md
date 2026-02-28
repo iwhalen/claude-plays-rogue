@@ -1,6 +1,6 @@
 # Claude plays Rogue
 
-The goal of this repo is to enable Claude to play the classic game Rogue.
+The goal of this repo is to play Rogue with LLMs like Claude.
 
 It uses a modified version of the Rogue Collection that can be found here: [https://github.com/iwhalen/Rogue-Collection](https://github.com/iwhalen/claude-plays-rogue)
 
@@ -32,7 +32,7 @@ Originally made for testing, you can also play from your terminal with "human" m
 uv run cpr --player human
 ```
 
-You should see something like this, which means you're ready to play!
+You should see something like this, which means you're ready to play.
 
 ``` bash 
 ╭───────────────────────────────────── Rogue ──────────────────────────────────────╮
@@ -63,6 +63,6 @@ You should see something like this, which means you're ready to play!
 ╰──────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-This is no different than regular old Rogue from the GUI. 
+This is no different than regular old Rogue from the GUI (i.e., with `make run-rogue`).
 
-To exit, sent a CTRL+C signal.
+To exit, send a CTRL+C signal.

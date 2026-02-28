@@ -10,7 +10,7 @@ DEFAULT_ROGUE_PATH = Path("rogue-collection/build/release/rogue-collection")
 
 class PlayerType(StrEnum):
     HUMAN = "human"
-    CLAUDE = "claude"
+    AI = "ai"
 
 
 class RogueVersion(StrEnum):
