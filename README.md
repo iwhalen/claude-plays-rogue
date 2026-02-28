@@ -17,7 +17,7 @@ make build-rogue
 make run-rogue
 ```
 
-This should open a window wher you can play Rogue!
+This should open a window where you can play Rogue!
 
 ## AI mode
 
