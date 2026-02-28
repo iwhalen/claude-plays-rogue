@@ -1,16 +1,18 @@
 [project]
 name = "cpr"
 version = "0.1.0"
-description = "Add your description here"
+description = "Package that lets Claude play Rogue"
 readme = "README.md"
 authors = [
     { name = "iwhalen", email = "ianpatrickwhalen@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pydantic-ai>=1.63.0",
+]
 
 [project.scripts]
-cpr = "cpr:main"
+cpr = "cpr.__main__:main"
 
 [build-system]
 requires = ["uv_build>=0.9.17,<0.10.0"]

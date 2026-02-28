@@ -1,6 +1,6 @@
-ROGUE_BUILD_DIR := rogue-collection/build/release
+ROGUE_DIR := rogue-collection
 
-.PHONY: install build run clean
+.PHONY: install build run clean distclean
 
 install:
 	sudo apt-get update
@@ -19,10 +19,13 @@ install:
 		qml-module-qtmultimedia
 
 build:
-	$(MAKE) -C rogue-collection/src
+	$(MAKE) -C $(ROGUE_DIR)
 
 run:
-	cd $(ROGUE_BUILD_DIR) && LD_LIBRARY_PATH=. ./rogue-collection "Unix Rogue 5.4.2"
+	$(MAKE) -C $(ROGUE_DIR) run
 
 clean:
-	$(MAKE) -C rogue-collection/src clean
+	$(MAKE) -C $(ROGUE_DIR) clean
+
+distclean:
+	$(MAKE) -C $(ROGUE_DIR) distclean

@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from cpr!")
+"""Claude plays Rogue (CPR) package."""
