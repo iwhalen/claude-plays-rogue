@@ -77,6 +77,7 @@ class RogueGame(RogueInterface):
                 env=self._env,
                 pass_fds=(trogue_r, frogue_w),
                 close_fds=True,
+                stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )
         except Exception:
@@ -115,6 +116,11 @@ class RogueGame(RogueInterface):
         if self._frogue_fd is None:
             raise RuntimeError("Rogue process is not running")
         self._drain()
+        return self._parser.screen
+
+    @property
+    def screen(self) -> ScreenState:
+        """Current screen state without reading new data from the pipe."""
         return self._parser.screen
 
     def is_running(self) -> bool:

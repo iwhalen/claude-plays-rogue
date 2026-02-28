@@ -12,13 +12,6 @@ from cpr.config import (
 )
 from cpr.play import play
 
-_BY = "\033[1;33m"
-_R = "\033[0m"
-
-BANNER = (
-    f"\n{_BY}\u00b7  \u00b7  \u00b7  Claude Plays Rogue  \u00b7  \u00b7  \u00b7{_R}\n\n"
-)
-
 app = typer.Typer()
 
 
@@ -46,7 +39,6 @@ def main(
     ] = DEFAULT_ROGUE_VERSION,
 ) -> None:
     """Main typer application. Starts the play session with the given options."""
-    typer.echo(BANNER)
     settings = CPRSettings(
         player=player,
         rogue_path=rogue_path,

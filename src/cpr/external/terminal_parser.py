@@ -20,24 +20,7 @@ class _State(Enum):
 
 
 class TerminalParser:
-    """Incremental VT100 parser that builds up a :class:`ScreenState`.
-
-    Handled sequences (matching Rogomatic's token set):
-
-    ============  ====================  ==========
-    Sequence      Meaning               Rogomatic
-    ============  ====================  ==========
-    ESC[r;cH      Cursor move           CM_TOK
-    ESC[K         Clear to EOL          CE_TOK
-    ESC[J         Clear to EOS
-    ESC[7m        Standout on           SO_TOK
-    ESC[m         Standout off          SE_TOK
-    \\x0c         Clear screen          CL_TOK
-    \\n           Line feed             LF_TOK
-    \\r           Carriage return       CR_TOK
-    printable     Write at cursor
-    ============  ====================  ==========
-    """
+    """Incremental VT100 parser that builds up a :class:`ScreenState`."""
 
     def __init__(self) -> None:
         self._screen = ScreenState.empty()
