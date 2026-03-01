@@ -1,1 +1,1 @@
-"""Claude plays Rogue tests."""
+"""Rogomatic for LLMs tests."""

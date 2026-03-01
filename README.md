@@ -1,8 +1,8 @@
-# Claude plays Rogue
+# Rogomatic for LLMs
 
-The goal of this repo is to play Rogue with LLMs like Claude.
+The goal of this repo is to play Rogue with LLMs.
 
-It uses a modified version of the Rogue Collection that can be found here: [https://github.com/iwhalen/Rogue-Collection](https://github.com/iwhalen/claude-plays-rogue)
+It uses a modified version of the Rogue Collection that can be found here: [https://github.com/iwhalen/Rogue-Collection](https://github.com/iwhalen/Rogue-Collection)
 
 ## Quickstart
 
@@ -29,7 +29,7 @@ TODO
 Originally made for testing, you can also play from your terminal with "human" mode.
 
 ``` bash
-uv run cpr --player human
+uv run rogomatic-llm --player human
 ```
 
 You should see something like this, which means you're ready to play.

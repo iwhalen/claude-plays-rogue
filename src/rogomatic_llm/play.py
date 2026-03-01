@@ -2,9 +2,10 @@
 
 import os
 
-from cpr.config import CPRSettings, PlayerType
-from cpr.external.game import RogueGame
-from cpr.player.human import HumanPlayer
+from rogomatic_llm.config import CPRSettings, PlayerType
+from rogomatic_llm.external.game import RogueGame
+from rogomatic_llm.player.human import HumanPlayer
+from rogomatic_llm.player.llm import LLMPlayer
 
 
 def play(config: CPRSettings) -> None:
@@ -17,15 +18,13 @@ def play(config: CPRSettings) -> None:
             "Run 'make build' first to compile the rogue binary."
         )
 
-    match config.player:
-        case PlayerType.HUMAN:
-            _play_human(config)
-        case PlayerType.CLAUDE:
-            raise NotImplementedError("Claude player is not yet implemented")
+    if config.player == PlayerType.HUMAN:
+        player = HumanPlayer()
+    elif config.player == PlayerType.LLM:
+        player = LLMPlayer(model=config.model, max_history=config.max_history)
+    else:
+        raise NotImplementedError(f"Invalid player type: {config.player}")
 
-
-def _play_human(config: CPRSettings) -> None:
-    """Launch an interactive human-played Rogue session."""
     rogue_path = config.rogue_path.resolve()
     rogue_dir = str(rogue_path.parent)
     env = os.environ.copy()
@@ -39,7 +38,6 @@ def _play_human(config: CPRSettings) -> None:
             args=[config.rogue_version],
             env=env,
         ) as game:
-            player = HumanPlayer()
             player.play(game)
     finally:
         os.chdir(original_cwd)

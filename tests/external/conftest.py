@@ -1,10 +1,10 @@
-"""Shared fixtures for cpr.external tests."""
+"""Shared fixtures for rogomatic_llm.external tests."""
 
 from __future__ import annotations
 
 import pytest
 
-from cpr.external.screen import ScreenState
+from rogomatic_llm.external.screen import ScreenState
 
 
 @pytest.fixture()

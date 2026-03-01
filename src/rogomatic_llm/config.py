@@ -1,4 +1,4 @@
-"""Global configuration for the Claude plays Rogue package."""
+"""Global configuration for the Rogomatic for LLMs package."""
 
 from enum import StrEnum
 from pathlib import Path
@@ -10,7 +10,7 @@ DEFAULT_ROGUE_PATH = Path("rogue-collection/build/release/rogue-collection")
 
 class PlayerType(StrEnum):
     HUMAN = "human"
-    AI = "ai"
+    LLM = "llm"
 
 
 class RogueVersion(StrEnum):
@@ -22,10 +22,17 @@ class RogueVersion(StrEnum):
 
 DEFAULT_ROGUE_VERSION = RogueVersion.V5_4_2
 
+# Must be a valid PydanticAI model that support structured output.
+DEFAULT_MODEL = "anthropic:claude-sonnet-4-6"
+
+DEFAULT_MAX_HISTORY = 25
+
 
 class CPRSettings(BaseSettings):
-    """Global config for Claude plays Rogue."""
+    """Global config for Rogomatic for LLMs."""
 
     player: PlayerType
     rogue_path: Path = DEFAULT_ROGUE_PATH
     rogue_version: RogueVersion = DEFAULT_ROGUE_VERSION
+    model: str = DEFAULT_MODEL
+    max_history: int = DEFAULT_MAX_HISTORY

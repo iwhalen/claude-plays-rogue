@@ -10,7 +10,7 @@ from __future__ import annotations
 import copy
 from enum import Enum, auto
 
-from cpr.external.screen import ScreenState
+from rogomatic_llm.external.screen import ScreenState
 
 
 class _State(Enum):

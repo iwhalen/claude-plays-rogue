@@ -4,15 +4,18 @@ from pathlib import Path
 from typing import Annotated
 
 import typer
+from dotenv import load_dotenv
 
-from cpr.config import (
+from rogomatic_llm.config import (
+    DEFAULT_MAX_HISTORY,
+    DEFAULT_MODEL,
     DEFAULT_ROGUE_PATH,
     DEFAULT_ROGUE_VERSION,
     CPRSettings,
     PlayerType,
     RogueVersion,
 )
-from cpr.play import play
+from rogomatic_llm.play import play
 
 app = typer.Typer()
 
@@ -22,10 +25,10 @@ def main(
     player: Annotated[
         PlayerType,
         typer.Option(
-            help="Type of player..",
+            help="Type of player.",
             case_sensitive=False,
         ),
-    ] = PlayerType.AI,
+    ] = PlayerType.LLM,
     rogue_path: Annotated[
         Path,
         typer.Option(
@@ -39,13 +42,30 @@ def main(
             case_sensitive=False,
         ),
     ] = DEFAULT_ROGUE_VERSION,
+    model_str: Annotated[
+        str,
+        typer.Option(
+            help="PydanticAI compatible Agent model string.",
+        ),
+    ] = DEFAULT_MODEL,
+    max_history: Annotated[
+        int,
+        typer.Option(
+            help="Number of recent action/result pairs to retain in AI context.",
+        ),
+    ] = DEFAULT_MAX_HISTORY,
 ) -> None:
     """Main typer application. Starts the play session with the given options."""
+    load_dotenv(".env", override=True)
+
     settings = CPRSettings(
         player=player,
         rogue_path=rogue_path,
         rogue_version=rogue_version,
+        model=model_str,
+        max_history=max_history,
     )
+
     play(settings)
 
 

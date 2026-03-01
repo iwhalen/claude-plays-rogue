@@ -1,10 +1,10 @@
-"""Tests for cpr.external.screen (ScreenState and StatusLine)."""
+"""Tests for rogomatic_llm.external.screen (ScreenState and StatusLine)."""
 
 from __future__ import annotations
 
 import pytest
 
-from cpr.external.screen import ScreenState, StatusLine
+from rogomatic_llm.external.screen import ScreenState, StatusLine
 
 
 class TestScreenStateEmpty:

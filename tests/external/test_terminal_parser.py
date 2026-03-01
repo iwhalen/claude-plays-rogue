@@ -1,8 +1,8 @@
-"""Tests for cpr.external.terminal_parser."""
+"""Tests for rogomatic_llm.external.terminal_parser."""
 
 from __future__ import annotations
 
-from cpr.external.terminal_parser import TerminalParser
+from rogomatic_llm.external.terminal_parser import TerminalParser
 
 
 class TestCursorMovement:

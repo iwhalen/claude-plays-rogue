@@ -1,7 +1,7 @@
 [project]
-name = "cpr"
+name = "rogomatic-llm"
 version = "0.1.0"
-description = "Package that lets Claude play Rogue"
+description = "Rogomatic for LLMs - play Rogue with any LLM that supports structured output"
 readme = "README.md"
 authors = [
     { name = "iwhalen", email = "ianpatrickwhalen@gmail.com" }
@@ -10,12 +10,13 @@ requires-python = ">=3.13"
 dependencies = [
     "pydantic-ai>=1.63.0",
     "pydantic-settings>=2.13.1",
+    "python-dotenv>=1.2.1",
     "rich>=14.3.3",
     "typer>=0.24.1",
 ]
 
 [project.scripts]
-cpr = "cpr.__main__:cli"
+rogomatic-llm = "rogomatic_llm.__main__:cli"
 
 [build-system]
 requires = ["uv_build>=0.9.17,<0.10.0"]
@@ -50,4 +51,4 @@ select = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["cpr"]
+known-first-party = ["rogomatic_llm"]
