@@ -96,8 +96,7 @@ You won't be able to save, resize, or do anything else. So, if you only want to 
 For more options in the CLI, run `uv run rogomatic-llm --help`:
 
 
-``` bash
-                                                                                                 
+``` bash                                                                       
  Usage: rogomatic-llm [OPTIONS]                                                                  
                                                                                                  
  Main typer application. Starts the play session with the given options.                         
@@ -127,7 +126,6 @@ For more options in the CLI, run `uv run rogomatic-llm --help`:
 │                                                              the installation.                │
 │ --help                                                       Show this message and exit.      │
 ╰───────────────────────────────────────────────────────────────────────────────────────────────╯
-
 ```
 
 ## Development
