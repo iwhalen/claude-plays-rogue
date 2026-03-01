@@ -13,6 +13,13 @@ It uses a modified version of the Rogue Collection that can be found [here](http
 > [!Warning]
 > This code has only been tested on WSL2 Ubuntu 24.04. 
 
+First, clone the repo recursively to pull in the custom version of Rogue Collection.
+
+``` bash
+git clone --recursive https://github.com/iwhalen/rogomatic-llm.git
+cd rogomatic-llm
+```
+
 To get Rogue running, run the following:
 
 ``` bash
@@ -36,6 +43,8 @@ By default, this works with Sonnet-4.6.
 ``` bash
 uv run rogomatic-llm
 ```
+
+Once running, you should see output like the `.gif` above.
 
 ## Human mode
 
@@ -76,8 +85,50 @@ You should see something like this, which means you're ready to play.
 ╰──────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-This is no different than regular old Rogue from the GUI (i.e., with `make run-rogue`). 
+This is no different from regular old Rogue from the GUI (i.e., with `make run-rogue`). 
 
 To exit, send a CTRL+C signal.
 
-You won't be able to save, resize, or anything else. So, if you only want to play Rogue, run `make run-rogue` instead.
+You won't be able to save, resize, or do anything else. So, if you only want to play Rogue, run `make run-rogue` instead.
+
+## CLI
+
+For more options in the CLI, run `uv run rogomatic-llm --help`:
+
+
+``` bash
+ Usage: rogomatic-llm [OPTIONS]
+
+ Main typer application. Starts the play session with the given options.
+
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --player                    [human|llm]                                          Type of player. [default: llm]                        │
+│ --rogue-path                PATH                                                 Path to the rogue executable.                         │
+│                                                                                  [default:                                             │
+│                                                                                  rogue-collection/build/release/rogue-collection]      │
+│ --rogue-version             [unix rogue 3.6.3|unix rogue 5.2.1|unix rogue        Rogue version to play. [default: Unix Rogue 5.4.2]    │
+│                             5.3|unix rogue 5.4.2]                                                                                      │
+│ --model-str                 TEXT                                                 PydanticAI compatible Agent model string.             │
+│                                                                                  [default: anthropic:claude-sonnet-4-6]                │
+│ --max-history               INTEGER                                              Number of recent action/result pairs to retain in AI  │
+│                                                                                  context.                                              │
+│                                                                                  [default: 25]                                         │
+│ --action-delay              FLOAT                                                Seconds to wait between actions in LLM mode.          │
+│                                                                                  [default: 0.5]                                        │
+│ --install-completion                                                             Install completion for the current shell.             │
+│ --show-completion                                                                Show completion for the current shell, to copy it or  │
+│                                                                                  customize the installation.                           │
+│ --help                                                                           Show this message and exit.                           │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
+## Development
+
+The dev setup for this repo is quite minimal. The two commands worth running are:
+
+``` bash
+make lint
+make test
+```
+
+The test suite is quite minimal. Not much is actually tested.
