@@ -96,36 +96,42 @@ You won't be able to save, resize, or do anything else. So, if you only want to 
 For more options in the CLI, run `uv run rogomatic-llm --help`:
 
 
-``` bash                                                                       
- Usage: rogomatic-llm [OPTIONS]                                                                  
-                                                                                                 
- Main typer application. Starts the play session with the given options.                         
-                                                                                                 
-╭─ Options ─────────────────────────────────────────────────────────────────────────────────────╮
-│ --player                    [human|llm]                      Type of player. [default: llm]   │
-│ --rogue-path                PATH                             Path to the rogue executable.    │
-│                                                              [default:                        │
-│                                                              rogue-collection/build/release/… │
-│ --rogue-version             [unix rogue 3.6.3|unix rogue     Rogue version to play.           │
-│                             5.2.1|unix rogue 5.3|unix rogue  [default: Unix Rogue 5.4.2]      │
-│                             5.4.2]                                                            │
-│ --model-str                 TEXT                             PydanticAI compatible Agent      │
-│                                                              model string.                    │
-│                                                              [default:                        │
-│                                                              anthropic:claude-sonnet-4-6]     │
-│ --max-history               INTEGER                          Number of recent action/result   │
-│                                                              pairs to retain in AI context.   │
-│                                                              [default: 25]                    │
-│ --action-delay              FLOAT                            Seconds to wait between actions  │
-│                                                              in LLM mode.                     │
-│                                                              [default: 0.5]                   │
-│ --install-completion                                         Install completion for the       │
-│                                                              current shell.                   │
-│ --show-completion                                            Show completion for the current  │
-│                                                              shell, to copy it or customize   │
-│                                                              the installation.                │
-│ --help                                                       Show this message and exit.      │
-╰───────────────────────────────────────────────────────────────────────────────────────────────╯
+``` bash                                                                             
+ Usage: rogomatic-llm [OPTIONS]                                                    
+                                                                                   
+ Main typer application. Starts the play session with the given options.           
+                                                                                   
+╭─ Options ───────────────────────────────────────────────────────────────────────╮
+│ --player                    [human|llm]               Type of player.           │
+│                                                       [default: llm]            │
+│ --rogue-path                PATH                      Path to the rogue         │
+│                                                       executable.               │
+│                                                       [default:                 │
+│                                                       rogue-collection/build/r… │
+│ --rogue-version             [unix rogue 3.6.3|unix    Rogue version to play.    │
+│                             rogue 5.2.1|unix rogue    [default: Unix Rogue      │
+│                             5.3|unix rogue 5.4.2]     5.4.2]                    │
+│ --model                     TEXT                      PydanticAI compatible     │
+│                                                       Agent model string.       │
+│                                                       [default:                 │
+│                                                       anthropic:claude-sonnet-… │
+│ --max-history               INTEGER                   Number of recent          │
+│                                                       action/result pairs to    │
+│                                                       retain in AI context.     │
+│                                                       [default: 25]             │
+│ --action-delay              FLOAT                     Seconds to wait between   │
+│                                                       actions in LLM mode.      │
+│                                                       [default: 0.5]            │
+│ --install-completion                                  Install completion for    │
+│                                                       the current shell.        │
+│ --show-completion                                     Show completion for the   │
+│                                                       current shell, to copy it │
+│                                                       or customize the          │
+│                                                       installation.             │
+│ --help                                                Show this message and     │
+│                                                       exit.                     │
+╰─────────────────────────────────────────────────────────────────────────────────╯
+
 ```
 
 ## Development

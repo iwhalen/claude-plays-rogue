@@ -43,7 +43,7 @@ def main(
             case_sensitive=False,
         ),
     ] = DEFAULT_ROGUE_VERSION,
-    model_str: Annotated[
+    model: Annotated[
         str,
         typer.Option(
             help="PydanticAI compatible Agent model string.",
@@ -69,7 +69,7 @@ def main(
         player=player,
         rogue_path=rogue_path,
         rogue_version=rogue_version,
-        model=model_str,
+        model=model,
         max_history=max_history,
         action_delay=action_delay,
     )
