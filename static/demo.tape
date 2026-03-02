@@ -1,5 +1,5 @@
 #
-# 
+# VHS .tape file for generating a gif of an LLM playing Rogue.
 #
 
 Output demo.gif
