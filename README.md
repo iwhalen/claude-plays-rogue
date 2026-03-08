@@ -1,5 +1,8 @@
 # Rogomatic for LLMs
 
+> [!Note]
+> For a continuation of this proof of concept, see [Rogue-Bench](https://github.com/iwhalen/rogue-bench).
+
 ![VHS gif of rogomatic-llm](static/demo.gif)
 
 > Make your own animations like this with [VHS](https://github.com/charmbracelet/vhs). 
